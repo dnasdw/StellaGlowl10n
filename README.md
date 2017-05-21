@@ -1,0 +1,1 @@
+# StellaGlowl10n
