@@ -1,0 +1,6 @@
+[submodule "StellaGlow"]
+	path = StellaGlow
+	url = https://github.com/dnasdw/StellaGlow.git
+[submodule "exepatch"]
+	path = exepatch
+	url = https://github.com/dnasdw/exepatch.git
