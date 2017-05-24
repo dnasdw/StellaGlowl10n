@@ -11,6 +11,7 @@ XCOPY zh\cxi0_tex build\cxi0 /S /Y
 REM FOR /R build\cxi0\exefs\banner %%I IN (*.bcmdl) DO (tools\txobtool -ivfd "%%I" "%%~dpnI" || PAUSE)
 REM FOR /R build\cxi0\romfs %%I IN (*.bcres.l10n.bcres) DO (tools\txobtool -ivfd "%%I" "%%~dpnI.dir" || PAUSE)
 REM FOR /R build\cxi0\romfs %%I IN (*.bcres.cmp) DO (tools\CmpTool C "%%~dpnI.l10n.bcres" "%%I" || PAUSE)
+FOR /R build\cxi0\romfs\param %%I IN (*.str) DO (tools\ImportStr "%%I" "%%~dpnI.l10n.txt" || PAUSE)
 FOR /R build\cxi0\romfs %%I IN (*.arc.cmp) DO (tools\CmpTool C "%%~dpnI.l10n.arc" "%%I" || PAUSE)
 CD /D "%cwdir%"
 PAUSE
