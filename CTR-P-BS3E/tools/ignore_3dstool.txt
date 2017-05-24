@@ -1,4 +1,5 @@
 // regex: ECMAScript grammar and case insensitive
 //ignore:
+\.l10n\.
 
 //remap ignore:

@@ -4,9 +4,9 @@ CD /D "%rootdir%"
 RD /S /Q cci
 RD /S /Q build
 RD /S /Q import_temp
-DEL StellaGlow.3ds
+DEL "Stella Glow (USA) (zh).3ds"
 DEL patch.3ps
 DEL zh\icon.ico
-DEL StellaGlow.exe
+DEL BS3ETOOLS.exe
 CD /D "%cwdir%"
 PAUSE
