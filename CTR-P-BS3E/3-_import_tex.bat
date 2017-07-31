@@ -9,6 +9,7 @@ XCOPY cci\cxi0\romfs build\cxi0\romfs /S /Y
 XCOPY zh\cxi0 build\cxi0 /S /Y
 REM XCOPY zh\cxi0_tex build\cxi0 /S /Y
 FOR /R build\cxi0\exefs\banner %%I IN (*.bcmdl) DO (tools\txobtool -ivfd "%%I" "%%~dpnI" || PAUSE)
-FOR /R build\cxi0\romfs %%I IN (*.bcres.l10n.bcres) DO (tools\txobtool -ivfd "%%I" "%%~dpnI.dir" || PAUSE)
+FOR /R build\cxi0\romfs %%I IN (*.bflim) DO (tools\bflimtool -evfp "%%I" "%%~dpnI.png" || PAUSE)
+REM FOR /R build\cxi0\romfs %%I IN (*.bcres.l10n.bcres) DO (tools\txobtool -ivfd "%%I" "%%~dpnI.dir" || PAUSE)
 CD /D "%cwdir%"
 PAUSE
