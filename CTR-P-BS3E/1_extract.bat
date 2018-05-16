@@ -1,9 +1,7 @@
-SET cwdir=%CD%
-SET rootdir=%~dp0
-CD /D "%rootdir%"
+PUSHD "%~dp0"
 RD /S /Q cci
 MD cci
-tools\3dstool -xvt0167f cci cci\0.cxi cci\1.cfa cci\6.cfa cci\7.cfa %1 --header cci\ncsdheader.bin
+tools\3dstool -xvt0167f cci cci\0.cxi cci\1.cfa cci\6.cfa cci\7.cfa "%~1" --header cci\ncsdheader.bin
 MD cci\cxi0
 tools\3dstool -xvtf cxi cci\0.cxi --header cci\cxi0\ncchheader.bin --exh cci\cxi0\exh.bin --logo cci\cxi0\logo.darc.lz --plain cci\cxi0\plain.bin --exefs cci\cxi0\exefs.bin --romfs cci\cxi0\romfs.bin --exh-auto-key --exefs-auto-key --exefs-top-auto-key --romfs-auto-key
 DEL cci\0.cxi
@@ -24,5 +22,4 @@ tools\3dstool -xvtf romfs cci\cfa6\romfs.bin --romfs-dir cci\cfa6\romfs
 tools\3dstool -xvtf romfs cci\cfa7\romfs.bin --romfs-dir cci\cfa7\romfs
 tools\3dstool -xvtf banner cci\cxi0\exefs\banner.bnr --banner-dir cci\cxi0\exefs\banner
 DEL cci\cxi0\exefs\banner.bnr
-CD /D "%cwdir%"
-PAUSE
+POPD

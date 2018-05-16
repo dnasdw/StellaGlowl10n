@@ -1,6 +1,4 @@
-SET cwdir=%CD%
-SET rootdir=%~dp0
-CD /D "%rootdir%"
+PUSHD "%~dp0"
 tools\3dstool -cvtf banner build\cxi0\exefs\banner.bnr --banner-dir build\cxi0\exefs\banner
 tools\3dstool -cvtfz exefs build\cxi0\exefs.bin --header build\cxi0\exefs\exefsheader.bin --exefs-dir build\cxi0\exefs
 tools\3dstool -cvtf romfs build\cxi0\romfs.bin --romfs-dir build\cxi0\romfs --romfs cci\cxi0\romfs.bin
@@ -16,10 +14,9 @@ tools\3dstool -cvtf cfa build\6.cfa --header cci\cfa6\ncchheader.bin --romfs bui
 tools\3dstool -cvtf cfa build\7.cfa --header cci\cfa7\ncchheader.bin --romfs build\cfa7\romfs.bin --romfs-auto-key
 tools\3dstool -cvt0167f cci build\0.cxi build\1.cfa build\6.cfa build\7.cfa "Stella Glow (USA) (zh).3ds" --header cci\ncsdheader.bin
 IF NOT "%~1"=="" (
-tools\3dstool --diff -vt cci --old %1 --new "Stella Glow (USA) (zh).3ds" --patch-file patch.3ps
+tools\3dstool --diff -vt cci --old "%~1" --new "Stella Glow (USA) (zh).3ds" --patch-file patch.3ps
 tools\icn2ico cci\cxi0\exefs\icon.icn zh\icon.ico
 CALL make_3ps_exe.bat zh\icon.ico patch.3ps BS3ETOOLS || CALL ..\exepatch\make_3ps_exe.bat zh\icon.ico patch.3ps BS3ETOOLS
 DEL zh\icon.ico
 )
-CD /D "%cwdir%"
-PAUSE
+POPD

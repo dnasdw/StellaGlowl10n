@@ -1,2 +1,3 @@
 // regex: ECMAScript grammar and case insensitive
 \.png
+\.l10n\.txt
