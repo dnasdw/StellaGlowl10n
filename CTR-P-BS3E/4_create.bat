@@ -8,10 +8,10 @@ MD build\cfa6
 tools\3dstool -cvtf romfs build\cfa6\romfs.bin --romfs-dir cci\cfa6\romfs --romfs cci\cfa6\romfs.bin
 MD build\cfa7
 tools\3dstool -cvtf romfs build\cfa7\romfs.bin --romfs-dir cci\cfa7\romfs --romfs cci\cfa7\romfs.bin
-tools\3dstool -cvtf cxi build\0.cxi --header cci\cxi0\ncchheader.bin --exh cci\cxi0\exh.bin --logo cci\cxi0\logo.darc.lz --plain cci\cxi0\plain.bin --exefs build\cxi0\exefs.bin --romfs build\cxi0\romfs.bin --exh-auto-key --exefs-auto-key --exefs-top-auto-key --romfs-auto-key
-tools\3dstool -cvtf cfa build\1.cfa --header cci\cfa1\ncchheader.bin --romfs build\cfa1\romfs.bin --romfs-auto-key
-tools\3dstool -cvtf cfa build\6.cfa --header cci\cfa6\ncchheader.bin --romfs build\cfa6\romfs.bin --romfs-auto-key
-tools\3dstool -cvtf cfa build\7.cfa --header cci\cfa7\ncchheader.bin --romfs build\cfa7\romfs.bin --romfs-auto-key
+tools\3dstool -cvtf cxi build\0.cxi --header cci\cxi0\ncchheader.bin --exh cci\cxi0\exh.bin --logo cci\cxi0\logo.darc.lz --plain cci\cxi0\plain.bin --exefs build\cxi0\exefs.bin --romfs build\cxi0\romfs.bin
+tools\3dstool -cvtf cfa build\1.cfa --header cci\cfa1\ncchheader.bin --romfs build\cfa1\romfs.bin
+tools\3dstool -cvtf cfa build\6.cfa --header cci\cfa6\ncchheader.bin --romfs build\cfa6\romfs.bin
+tools\3dstool -cvtf cfa build\7.cfa --header cci\cfa7\ncchheader.bin --romfs build\cfa7\romfs.bin
 tools\3dstool -cvt0167f cci build\0.cxi build\1.cfa build\6.cfa build\7.cfa "Stella Glow (USA) (zh).3ds" --header cci\ncsdheader.bin
 IF NOT "%~1"=="" (
 tools\3dstool --diff -vt cci --old "%~1" --new "Stella Glow (USA) (zh).3ds" --patch-file patch.3ps
