@@ -28,6 +28,7 @@ tools\charset2xlor "import_temp\charset\%%~nI_2.txt" "tools_temp\NW_FontConverte
 tools_temp\NW_FontConverter\NW_FontConverterConsole.exe -i image -if "import_temp\charset\%%~nI_2.bmp" -io "tools_temp\NW_FontConverter\xlor\%%~nI_2.xlor" -ic A4 -o bffnt -of "build\cxi0\romfs\font\%%~nI.bffnt" -oa @ || PAUSE
 DEL "tools_temp\NW_FontConverter\xlor\%%~nI_2.xlor"
 )
+FOR /R build\cxi0\romfs %%I IN (*.bflyt) DO (tools\bflyttool -ivft "%%~I" "%%~dpnI.l10n.txt" || PAUSE)
 FOR /R build\cxi0\romfs\event %%I IN (*.flw) DO (tools\ImportFlw "%%~I" "%%~dpnI.l10n.txt" "%%~dpnI.l10n.outer.txt" "%%~dpnI.l10n.inner.txt" || PAUSE)
 FOR /R build\cxi0\romfs\param %%I IN (*.str) DO (tools\ImportStr "%%~I" "%%~dpnI.l10n.txt" "%%~dpnI.l10n.outer.txt" "%%~dpnI.l10n.inner.txt" || PAUSE)
 FOR /R build\cxi0\romfs %%I IN (*.arc.l10n.arc) DO (tools\sarctool -cvfd "%%~I" "%%~dpnI.dir" || PAUSE)
